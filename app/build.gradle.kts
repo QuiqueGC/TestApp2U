@@ -48,11 +48,9 @@ android {
 
 dependencies {
 
-    val navCompVersion = "2.7.7"
-
     //navComponent
-    implementation("androidx.navigation:navigation-fragment-ktx:$navCompVersion")
-    implementation("androidx.navigation:navigation-ui-ktx:$navCompVersion")
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.navigation.ui.ktx)
 
 
     //common
@@ -66,29 +64,29 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
 
     //Lifecycle & Coroutines
-    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.7.0")
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.7.0")
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0")
-    implementation("androidx.activity:activity-ktx:1.8.2")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
+    implementation(libs.androidx.lifecycle.livedata.ktx)
+    implementation(libs.lifecycle.runtime.ktx)
+    implementation(libs.lifecycle.viewmodel.ktx)
+    implementation(libs.androidx.activity.ktx)
+    implementation(libs.kotlinx.coroutines.android)
+    implementation(libs.jetbrains.kotlinx.coroutines.core)
 
     // Retrofit
-    implementation("com.squareup.retrofit2:retrofit:2.9.0")
-    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
-    implementation("com.squareup.retrofit2:converter-simplexml:2.9.0")
-    implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
-    implementation("com.squareup.retrofit2:converter-scalars:2.9.0")
+    implementation(libs.retrofit)
+    implementation(libs.retrofit2.converter.gson)
+    implementation(libs.converter.simplexml)
+    implementation(libs.logging.interceptor)
+    implementation(libs.converter.scalars)
 
     //Glide
-    implementation("com.github.bumptech.glide:glide:4.16.0")
-    ksp("com.github.bumptech.glide:compiler:4.16.0")
-    ksp("com.github.bumptech.glide:ksp:4.16.0")
-    implementation("com.caverock:androidsvg:1.4")
+    implementation(libs.glide)
+    ksp(libs.compiler)
+    ksp(libs.ksp)
+    implementation(libs.androidsvg)
 
     //daggerHilt
-    implementation("com.google.dagger:hilt-android:2.48.1")
-    kapt("com.google.dagger:hilt-android-compiler:2.48.1")
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.android.compiler)
 }
 
 //necesito el kapt para dagger, parece
