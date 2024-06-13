@@ -13,4 +13,8 @@
     <dimen name="midPanelHeight">96dp</dimen>
     <dimen name="btnsMidPanelWidth">72dp</dimen>
     <dimen name="elevationBasic">10dp</dimen>
+    <dimen name="nameArtistHeight">64dp</dimen>
+    <dimen name="imgArtistListItem">144dp</dimen>
+    <dimen name="nameArtistSize">24sp</dimen>
+    <dimen name="artistDescriptionTxtSize">16sp</dimen>
 </resources>

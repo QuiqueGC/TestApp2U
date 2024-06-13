@@ -8,28 +8,21 @@
     <ImageView
         android:id="@+id/imgPhotographer"
         android:layout_width="match_parent"
-        android:layout_height="144dp"
+        android:layout_height="@dimen/imgArtistListItem"
         android:scaleType="centerCrop"
         android:src="@drawable/artist_placeholder"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tvNameArtist"
-        android:layout_width="wrap_content"
-        android:layout_height="64dp"
-        android:textSize="24sp"
-        android:gravity="center"
-        android:fontFamily="sans-serif-light"
-        android:layout_marginStart="@dimen/commonMargin"
+        style="@style/tvNameArtist"
         app:layout_constraintTop_toBottomOf="@id/imgPhotographer"
         app:layout_constraintStart_toStartOf="parent"
         tools:text="Ojo de halcón" />
 
     <CheckBox
-        android:layout_width="@dimen/iconsSize"
-        android:layout_height="@dimen/iconsSize"
-        android:button="@drawable/selector_chkb_favs"
-        android:layout_marginEnd="@dimen/commonMargin"
+        android:id="@+id/chbFav"
+        style="@style/chbFav"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/tvNameArtist"
         app:layout_constraintBottom_toBottomOf="@id/tvNameArtist" />

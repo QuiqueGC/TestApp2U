@@ -8,4 +8,21 @@
         <item name="android:textColor">@color/regularTxt</item>
         <item name="android:background">@color/transparent</item>
     </style>
+
+    <style name="tvNameArtist">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">@dimen/nameArtistHeight</item>
+        <item name="android:textSize">@dimen/nameArtistSize</item>
+        <item name="android:gravity">center</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+        <item name="android:layout_marginStart">@dimen/commonMargin</item>
+    </style>
+
+    <style name="chbFav">
+        <item name="android:layout_width">@dimen/iconsSize</item>
+        <item name="android:layout_height">@dimen/iconsSize</item>
+        <item name="android:button">@drawable/selector_chkb_favs</item>
+        <item name="android:layout_marginEnd">@dimen/commonMargin</item>
+    </style>
+
 </resources>
