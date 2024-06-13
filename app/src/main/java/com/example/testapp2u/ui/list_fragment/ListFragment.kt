@@ -6,8 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.testapp2u.databinding.FragmentListBinding
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class ListFragment : Fragment() {
 
     private lateinit var mBinding: FragmentListBinding
