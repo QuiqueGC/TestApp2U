@@ -1,0 +1,9 @@
+<!-- combined_drawable.xml -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Fondo redondeado -->
+    <item android:drawable="@drawable/background_btn_artwork" />
+
+    <item
+        android:drawable="@drawable/ic_frame"
+        android:gravity="center" />
+</layer-list>

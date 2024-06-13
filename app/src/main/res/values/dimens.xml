@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="commonMargin">24dp</dimen>
+    <dimen name="radiusRounded">24dp</dimen>
+    <dimen name="iconsSize">32dp</dimen>
+    <dimen name="smallMargin">16dp</dimen>
+    <dimen name="minMargin">8dp</dimen>
+    <dimen name="largeMargin">32dp</dimen>
+    <dimen name="maxMargin">48dp</dimen>
+</resources>

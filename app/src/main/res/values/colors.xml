@@ -2,4 +2,12 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="transparent">#00000000</color>
+    <color name="brick">#d7967c</color>
+    <color name="beige">#877b66</color>
+    <color name="brownLight">#7e5730</color>
+    <color name="brownMedium">#6e4228</color>
+    <color name="brownDark">#4f4739</color>
+    <color name="grayLight">#acbccc</color>
+    <color name="grayDark">#646464</color>
 </resources>

@@ -1,5 +1,9 @@
 <resources>
     <string name="app_name">TestApp2U</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="btnCamera">Camera button</string>
+    <string name="btnAccount">Account button</string>
+    <string name="scan">Scan</string>
+    <string name="dateEvent">15 – 25 OCTOBER 2020</string>
+    <string name="titleEvent">INCADAQUÉS 2020</string>
 </resources>
