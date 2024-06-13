@@ -10,4 +10,5 @@
     <color name="brownDark">#4f4739</color>
     <color name="grayLight">#acbccc</color>
     <color name="grayDark">#646464</color>
+    <color name="regularTxt">#333333</color>
 </resources>

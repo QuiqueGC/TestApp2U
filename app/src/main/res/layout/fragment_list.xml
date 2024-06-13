@@ -4,15 +4,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.list_fragment.ListFragment"
-    android:background="@color/brick">
+    tools:context=".ui.list_fragment.ListFragment">
 
     <View
-        android:id="@+id/vStateBarExpanded"
+        android:id="@+id/vStateBarExpansion"
         android:layout_width="match_parent"
-        android:layout_height="24dp"
+        android:layout_height="@dimen/stateBarExpansionHeight"
         app:layout_constraintTop_toTopOf="parent"
         android:background="@color/black" />
+
+    <View
+        android:id="@+id/vTopPanel"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/brick"
+        android:layout_marginBottom="-24dp"
+        app:layout_constraintTop_toBottomOf="@id/vStateBarExpansion"
+        app:layout_constraintBottom_toBottomOf="@id/tvDate" />
 
     <Button
         android:id="@+id/btnCamera"
@@ -23,10 +31,10 @@
         android:drawableTop="@drawable/ic_camera"
         android:text="@string/scan"
         android:fontFamily="sans-serif-condensed"
-        android:textColor="#333333"
+        android:textColor="@color/regularTxt"
         android:background="@color/transparent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/vStateBarExpanded" />
+        app:layout_constraintTop_toBottomOf="@id/vStateBarExpansion" />
 
 
     <ImageButton
@@ -46,7 +54,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/titleEvent"
-        android:textSize="24sp"
+        android:textSize="@dimen/titleSize"
         android:textStyle="bold"
         android:fontFamily="sans-serif-black"
         android:textColor="@color/black"
@@ -60,13 +68,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/dateEvent"
-        android:textSize="12sp"
+        android:textSize="@dimen/dateSize"
         android:textColor="@color/black"
         android:fontFamily="sans-serif-condensed-light"
         android:layout_marginTop="@dimen/minMargin"
         app:layout_constraintTop_toBottomOf="@id/tvTitle"
         app:layout_constraintStart_toStartOf="@id/tvTitle" />
-
 
     <ImageButton
         android:id="@+id/imgFavTitle"
@@ -80,62 +87,36 @@
         app:layout_constraintTop_toTopOf="@id/tvTitle"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <View
-        android:id="@+id/vBtnsBackground"
-        android:layout_width="match_parent"
-        android:layout_height="96dp"
-        android:layout_marginTop="@dimen/largeMargin"
-        app:layout_constraintTop_toBottomOf="@id/tvDate"
-        android:background="@color/white" />
 
     <Button
         android:id="@+id/btnProgram"
-        android:layout_width="72dp"
-        android:layout_height="wrap_content"
+        style="@style/btnMidPanelAtListFragment"
         android:drawableTop="@drawable/ic_btn_program"
-        android:text="Program"
-        android:paddingHorizontal="1dp"
-        android:fontFamily="sans-serif-condensed"
-        android:textColor="#333333"
-        android:background="@color/transparent"
+        android:text="@string/program"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/vBtnsBackground"
-        app:layout_constraintBottom_toBottomOf="@id/vBtnsBackground" />
+        app:layout_constraintTop_toBottomOf="@id/vTopPanel" />
 
     <Button
         android:id="@+id/btnArtworks"
-        android:layout_width="72dp"
-        android:layout_height="wrap_content"
+        style="@style/btnMidPanelAtListFragment"
         android:drawableTop="@drawable/ic_btn_artwork"
-        android:text="Artwork"
-        android:paddingHorizontal="1dp"
-        android:fontFamily="sans-serif-condensed"
-        android:textColor="#333333"
-        android:background="@color/transparent"
+        android:text="@string/artwork"
         app:layout_constraintStart_toEndOf="@id/btnProgram"
-        app:layout_constraintTop_toTopOf="@id/vBtnsBackground"
-        app:layout_constraintBottom_toBottomOf="@id/vBtnsBackground" />
+        app:layout_constraintTop_toTopOf="@id/btnProgram" />
 
     <Button
         android:id="@+id/btnMap"
-        android:layout_width="72dp"
-        android:layout_height="wrap_content"
+        style="@style/btnMidPanelAtListFragment"
         android:drawableTop="@drawable/ic_btn_map"
-        android:text="Map"
-        android:fontFamily="sans-serif-condensed"
-        android:textColor="#333333"
-        android:paddingHorizontal="1dp"
-        android:background="@color/transparent"
+        android:text="@string/map"
         app:layout_constraintStart_toEndOf="@id/btnArtworks"
-        app:layout_constraintTop_toTopOf="@id/vBtnsBackground"
-        app:layout_constraintBottom_toBottomOf="@id/vBtnsBackground" />
+        app:layout_constraintTop_toTopOf="@id/btnProgram" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:background="@color/white"
         tools:listitem="@layout/item_list_photographer"
-        app:layout_constraintTop_toBottomOf="@id/vBtnsBackground"
+        app:layout_constraintTop_toBottomOf="@id/btnProgram"
         app:layout_constraintBottom_toTopOf="@id/bottomNavBar" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -146,6 +127,6 @@
         app:labelVisibilityMode="labeled"
         app:itemActiveIndicatorStyle="@color/transparent"
         app:menu="@menu/bottom_app_bar"
-        android:elevation="10dp"
+        android:elevation="@dimen/elevationBasic"
         app:layout_constraintBottom_toBottomOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

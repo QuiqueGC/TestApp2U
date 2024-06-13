@@ -2,9 +2,15 @@
 <resources>
     <dimen name="commonMargin">24dp</dimen>
     <dimen name="radiusRounded">24dp</dimen>
-    <dimen name="iconsSize">32dp</dimen>
+    <dimen name="iconsSize">40dp</dimen>
     <dimen name="smallMargin">16dp</dimen>
     <dimen name="minMargin">8dp</dimen>
     <dimen name="largeMargin">32dp</dimen>
     <dimen name="maxMargin">48dp</dimen>
+    <dimen name="stateBarExpansionHeight">24dp</dimen>
+    <dimen name="titleSize">24sp</dimen>
+    <dimen name="dateSize">12sp</dimen>
+    <dimen name="midPanelHeight">96dp</dimen>
+    <dimen name="btnsMidPanelWidth">72dp</dimen>
+    <dimen name="elevationBasic">10dp</dimen>
 </resources>

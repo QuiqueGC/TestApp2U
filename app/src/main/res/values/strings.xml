@@ -6,4 +6,7 @@
     <string name="scan">Scan</string>
     <string name="dateEvent">15 – 25 OCTOBER 2020</string>
     <string name="titleEvent">INCADAQUÉS 2020</string>
+    <string name="program">Program</string>
+    <string name="artwork">Artwork</string>
+    <string name="map">Map</string>
 </resources>
