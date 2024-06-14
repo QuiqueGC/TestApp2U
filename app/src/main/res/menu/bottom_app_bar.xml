@@ -5,7 +5,7 @@
         android:title="Scan" />
     <item
         android:id="@+id/btnFestivals"
-        android:icon="@drawable/ic_calendar"
+        android:icon="@drawable/ic_eye"
         android:title="Festivals" />
     <item
         android:id="@+id/btnNews"
