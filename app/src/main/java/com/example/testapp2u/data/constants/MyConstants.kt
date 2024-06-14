@@ -1,4 +1,4 @@
-package com.example.testapp2u.data
+package com.example.testapp2u.data.constants
 
 object MyConstants {
     const val BASE_URL = "https://inphototest.app2u.es/api/photographer/"

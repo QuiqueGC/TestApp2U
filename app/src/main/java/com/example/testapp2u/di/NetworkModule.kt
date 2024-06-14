@@ -1,6 +1,6 @@
 package com.example.testapp2u.di
 
-import com.example.testapp2u.data.MyConstants
+import com.example.testapp2u.data.constants.MyConstants
 import com.example.testapp2u.data.domain.repository.remote.RemoteApiService
 import com.google.gson.GsonBuilder
 import dagger.Module
