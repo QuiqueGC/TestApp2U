@@ -1,5 +1,6 @@
 package com.example.testapp2u.data.domain.repository.remote
 
+import android.util.Log
 import com.example.testapp2u.data.domain.repository.remote.response.BaseApiCallService
 import com.example.testapp2u.data.domain.repository.remote.response.BaseResponse
 import com.example.testapp2u.data.domain.repository.remote.response.artist.ArtistListResponse
@@ -9,6 +10,7 @@ class ApiCallService @Inject constructor(private val remoteApiService: RemoteApi
     BaseApiCallService() {
 
     suspend fun getArtistsList(limit: Int, offset: Int): BaseResponse<ArtistListResponse> {
+        Log.i("apiCall", "entró en el apiCallService")
         return apiCall { remoteApiService.getArtistsList(limit, offset) }
     }
 }

@@ -1,5 +1,6 @@
 package com.example.testapp2u.ui.list_fragment
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.testapp2u.data.domain.repository.remote.response.BaseResponse
@@ -22,10 +23,12 @@ class ListFragmentViewModel @Inject constructor(
 
     fun getArtistsList() {
         viewModelScope.launch(Dispatchers.IO) {
+            Log.i("apiCall", "llama al caso de uso")
             when (val baseResponse = getArtistsListUseCase(10, 0)) {
                 is BaseResponse.Error -> _uiState.emit(ListFragmentUiState.Error(baseResponse.error))
                 is BaseResponse.Success -> _uiState.emit(ListFragmentUiState.Success(baseResponse.data.results))
             }
+            Log.i("apiCall", "terminó la llamada al caso de uso")
         }
     }
 }

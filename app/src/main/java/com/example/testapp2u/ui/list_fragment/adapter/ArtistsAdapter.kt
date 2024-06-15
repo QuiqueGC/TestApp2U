@@ -43,6 +43,7 @@ class ArtistsAdapter(
             Glide.with(context)
                 .load(artists[position].image)
                 .apply(RequestOptions().centerCrop())
+                .error(R.drawable.artist_placeholder)
                 .into(imgPhotoArtist)
         }
         holder.setListener(artists[position].id)
