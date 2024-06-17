@@ -18,6 +18,7 @@ class DBSource @Inject constructor(private val artistDao: ArtistDao) : IDBSource
     }
 
     override suspend fun insertArtistsAtDB(artists: List<ArtistEntity>) {
+        //artistDao.deleteArtists()
         artistDao.insertAllArtists(artists)
     }
 }

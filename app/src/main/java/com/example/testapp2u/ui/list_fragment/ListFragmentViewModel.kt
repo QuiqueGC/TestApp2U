@@ -25,29 +25,41 @@ class ListFragmentViewModel @Inject constructor(
     private val _uiState = MutableStateFlow<ListFragmentUiState>(ListFragmentUiState.Loading)
     val uiState: StateFlow<ListFragmentUiState> = _uiState
 
-
     fun getArtistsList() {
+        var offset = 0
+        val limit = 50
+        var isFinished = false
+
         viewModelScope.launch(Dispatchers.IO) {
-            when (val baseResponse = getArtistsListFromRemoteUseCase(10, 0)) {
-                is BaseResponse.Error -> getArtistsFromDB()
-                is BaseResponse.Success -> {
-                    insertArtistsAtDB(baseResponse.data)
+            do {
+                when (val baseResponse = getArtistsListFromRemoteUseCase(limit, offset)) {
+                    is BaseResponse.Error -> {
+                        getArtistsFromDB()
+                        isFinished = true
+                    }
+
+                    is BaseResponse.Success -> {
+                        val deferred = async { insertArtistsAtDB(baseResponse.data) }
+                        deferred.await()
+                        offset += limit
+                        if (baseResponse.data.isEmpty()) {
+                            isFinished = true
+                        }
+                    }
                 }
-            }
+            } while (!isFinished)
+
+            _uiState.emit(ListFragmentUiState.Success(getArtistsListFromDBUseCase().toMutableList()))
         }
     }
 
-    fun getArtistsFromDB() {
+    private fun getArtistsFromDB() {
         viewModelScope.launch(Dispatchers.IO) {
             _uiState.emit(ListFragmentUiState.Success(getArtistsListFromDBUseCase().toMutableList()))
         }
     }
 
-    private fun insertArtistsAtDB(artists: List<ArtistEntity>) {
-        viewModelScope.launch(Dispatchers.IO) {
-            val deferred = async { insertArtistsAtDBUseCase(artists) }
-            deferred.await()
-            _uiState.emit(ListFragmentUiState.Success(getArtistsListFromDBUseCase().toMutableList()))
-        }
+    private suspend fun insertArtistsAtDB(artists: List<ArtistEntity>) {
+        insertArtistsAtDBUseCase(artists)
     }
 }
