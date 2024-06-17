@@ -37,8 +37,8 @@ class ListFragment : Fragment(), ArtistsAdapter.ItemArtistListener {
         mViewModel.getArtistsList()
         setupAdapter()
         observeViewModel()
-
     }
+
 
     private fun observeViewModel() {
         lifecycleScope.launch {
