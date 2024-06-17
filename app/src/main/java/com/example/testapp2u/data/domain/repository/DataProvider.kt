@@ -32,4 +32,8 @@ class DataProvider @Inject constructor(
     override suspend fun insertArtistsAtDB(artists: List<ArtistEntity>) {
         dbSource.insertArtistsAtDB(artists)
     }
+
+    override suspend fun getArtistByIdFromDB(idArtist: Int): ArtistModel {
+        return dbSource.getArtistByIdFromDB(idArtist)
+    }
 }

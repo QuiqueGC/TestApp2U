@@ -6,4 +6,5 @@ import com.example.testapp2u.data.domain.repository.db.entities.artist.ArtistEnt
 interface IDBSource {
     suspend fun getArtistsFromDB(): List<ArtistModel>
     suspend fun insertArtistsAtDB(artists: List<ArtistEntity>)
+    suspend fun getArtistByIdFromDB(idArtist: Int): ArtistModel
 }

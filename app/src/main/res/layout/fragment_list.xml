@@ -26,28 +26,30 @@
         android:id="@+id/btnCamera"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/commonMargin"
         android:layout_marginStart="@dimen/commonMargin"
-        android:drawableTop="@drawable/ic_camera"
-        android:text="@string/scan"
-        android:fontFamily="sans-serif-condensed"
-        android:textColor="@color/regularTxt"
+        android:layout_marginTop="@dimen/commonMargin"
         android:background="@color/transparent"
+        android:drawableTop="@drawable/ic_camera"
+        android:fontFamily="sans-serif-condensed"
+        android:text="@string/scan"
+        android:textColor="@color/regularTxt"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/vStateBarExpansion" />
+        app:layout_constraintTop_toBottomOf="@id/vStateBarExpansion"
+        tools:ignore="DuplicateSpeakableTextCheck" />
 
 
     <ImageButton
         android:id="@+id/ibAccount"
         android:layout_width="@dimen/iconsSize"
         android:layout_height="@dimen/iconsSize"
-        android:contentDescription="@string/btnAccount"
-        android:src="@drawable/ic_account"
         android:layout_marginTop="@dimen/minMargin"
         android:layout_marginEnd="@dimen/commonMargin"
         android:background="@drawable/background_btn_account"
+        android:contentDescription="@string/btnAccount"
+        android:src="@drawable/ic_account"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/btnCamera"
-        app:layout_constraintEnd_toEndOf="parent" />
+        tools:ignore="DuplicateSpeakableTextCheck,ImageContrastCheck" />
 
     <TextView
         android:id="@+id/tvTitle"

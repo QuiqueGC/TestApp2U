@@ -12,6 +12,9 @@ interface ArtistDao {
     @Query("SELECT * FROM artist_table WHERE isRemoved = 0")
     suspend fun getAllArtists(): List<ArtistEntity>
 
+    @Query("SELECT * FROM artist_table WHERE id = :idArtist")
+    suspend fun getArtistById(idArtist: Int): List<ArtistEntity>
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertAllArtists(artists: List<ArtistEntity>)
 

@@ -20,7 +20,7 @@
         app:layout_constraintTop_toBottomOf="@id/vStateBarExpansion">
 
         <ImageButton
-            android:id="@+id/toolbar_icon"
+            android:id="@+id/ibBack"
             android:layout_width="@dimen/iconsSize"
             android:layout_height="@dimen/iconsSize"
             android:layout_gravity="start"
@@ -51,13 +51,29 @@
         app:layout_constraintTop_toTopOf="@id/tvNameArtist"
         app:layout_constraintBottom_toBottomOf="@id/tvNameArtist" />
 
-    <TextView
-        android:id="@+id/tvArtistDescription"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="@dimen/artistDescriptionTxtSize"
-        android:layout_marginHorizontal="@dimen/commonMargin"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:layout_marginBottom="@dimen/commonMargin"
         app:layout_constraintTop_toBottomOf="@id/tvNameArtist"
-        tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada. Nullam porttitor massa vel facilisis pharetra. Proin ut velit in lacus ullamcorper scelerisque. Donec gravida, nunc id laoreet sagittis, purus felis ultricies erat.
-" />
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <TextView
+            android:id="@+id/tvArtistDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/artistDescriptionTxtSize"
+            android:layout_marginHorizontal="@dimen/commonMargin"
+            app:layout_constraintTop_toBottomOf="@id/tvNameArtist" />
+    </ScrollView>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

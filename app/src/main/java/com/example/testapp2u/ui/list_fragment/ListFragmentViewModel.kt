@@ -34,7 +34,6 @@ class ListFragmentViewModel @Inject constructor(
             do {
                 when (val baseResponse = getArtistsListFromRemoteUseCase(limit, offset)) {
                     is BaseResponse.Error -> {
-                        getArtistsFromDB()
                         isFinished = true
                     }
 
@@ -49,12 +48,6 @@ class ListFragmentViewModel @Inject constructor(
                 }
             } while (!isFinished)
 
-            _uiState.emit(ListFragmentUiState.Success(getArtistsListFromDBUseCase().toMutableList()))
-        }
-    }
-
-    private fun getArtistsFromDB() {
-        viewModelScope.launch(Dispatchers.IO) {
             _uiState.emit(ListFragmentUiState.Success(getArtistsListFromDBUseCase().toMutableList()))
         }
     }

@@ -5,11 +5,15 @@ import com.example.testapp2u.data.domain.repository.db.entities.artist.ArtistEnt
 
 class ArtistMapperFromEntity : DBMapper<ArtistEntity, ArtistModel> {
     override fun fromEntity(entity: ArtistEntity): ArtistModel {
+        val description = entity.description.ifEmpty {
+            "Description not available"
+        }
+
         return ArtistModel(
             entity.id,
             entity.firstName,
             entity.lastName,
-            entity.description,
+            description,
             entity.image
         )
     }
