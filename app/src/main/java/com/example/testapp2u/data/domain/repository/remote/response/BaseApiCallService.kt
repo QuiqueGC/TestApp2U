@@ -1,6 +1,5 @@
 package com.example.testapp2u.data.domain.repository.remote.response
 
-import android.util.Log
 import com.example.testapp2u.data.domain.models.ErrorModel
 import retrofit2.Response
 
@@ -36,7 +35,6 @@ abstract class BaseApiCallService {
             }
 
         } catch (throwable: Throwable) {
-            Log.i("apiCall", "No es capaz de efectuar la llamada y salta el Catch")
             BaseResponse.Error(ErrorModel())
         }
     }

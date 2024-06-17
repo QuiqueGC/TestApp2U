@@ -4,5 +4,7 @@ import com.example.testapp2u.data.domain.repository.db.entities.artist.ArtistEnt
 import com.example.testapp2u.data.domain.repository.remote.response.BaseResponse
 
 interface IRemoteDataSource {
-    suspend fun getArtistsListFromRemote(limit: Int, offset: Int): BaseResponse<List<ArtistEntity>>
+    suspend fun getArtistsListFromRemote(
+        limit: Int, offset: Int
+    ): BaseResponse<List<ArtistEntity>>
 }

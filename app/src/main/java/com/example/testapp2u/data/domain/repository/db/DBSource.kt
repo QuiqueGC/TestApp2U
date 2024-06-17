@@ -13,7 +13,9 @@ class DBSource @Inject constructor(private val artistDao: ArtistDao) : IDBSource
     override suspend fun getArtistsFromDB(): List<ArtistModel> {
         val artistsEntities = artistDao.getAllArtists()
         val artistsModels = mutableListOf<ArtistModel>()
-        artistsEntities.forEach { artistsModels.add(ArtistMapperFromEntity().fromEntity(it)) }
+        artistsEntities.forEach {
+            artistsModels.add(ArtistMapperFromEntity().fromEntity(it))
+        }
         return artistsModels.toList()
     }
 
@@ -22,6 +24,8 @@ class DBSource @Inject constructor(private val artistDao: ArtistDao) : IDBSource
     }
 
     override suspend fun getArtistByIdFromDB(idArtist: Int): ArtistModel {
-        return ArtistMapperFromEntity().fromEntity(artistDao.getArtistById(idArtist).first())
+        return ArtistMapperFromEntity().fromEntity(
+            artistDao.getArtistById(idArtist).first()
+        )
     }
 }

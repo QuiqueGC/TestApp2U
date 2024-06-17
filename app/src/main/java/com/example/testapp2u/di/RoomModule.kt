@@ -18,7 +18,9 @@ object RoomModule {
     @Singleton
     @Provides
     fun provideRoom(@ApplicationContext context: Context) =
-        Room.databaseBuilder(context, ArtistDB::class.java, MyConstants.DB_ARTIST_NAME).build()
+        Room.databaseBuilder(
+            context, ArtistDB::class.java, MyConstants.DB_ARTIST_NAME
+        ).build()
 
     @Singleton
     @Provides

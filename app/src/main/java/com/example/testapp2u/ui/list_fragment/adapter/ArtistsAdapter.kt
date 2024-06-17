@@ -1,5 +1,6 @@
 package com.example.testapp2u.ui.list_fragment.adapter
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -38,7 +39,11 @@ class ArtistsAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         with(holder.mBinding) {
-            tvNameArtist.text = "${artists[position].firstName} ${artists[position].lastName}"
+            tvNameArtist.text = context.getString(
+                R.string.artistFullName,
+                artists[position].firstName,
+                artists[position].lastName
+            )
 
             Glide.with(context)
                 .load(artists[position].image)
@@ -51,6 +56,7 @@ class ArtistsAdapter(
 
     override fun getItemCount() = artists.count()
 
+    @SuppressLint("NotifyDataSetChanged")
     fun refreshData(newArtistsList: List<ArtistModel>) {
         artists = newArtistsList
         notifyDataSetChanged()

@@ -1,6 +1,5 @@
 package com.example.testapp2u.data.domain.repository
 
-import android.util.Log
 import com.example.testapp2u.data.domain.models.artist.ArtistModel
 import com.example.testapp2u.data.domain.repository.db.DBSource
 import com.example.testapp2u.data.domain.repository.db.IDBSource
@@ -21,7 +20,6 @@ class DataProvider @Inject constructor(
         limit: Int,
         offset: Int
     ): BaseResponse<List<ArtistEntity>> {
-        Log.i("apiCall", "entró en el dataProvider")
         return remoteDataSource.getArtistsListFromRemote(limit, offset)
     }
 

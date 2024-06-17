@@ -28,7 +28,9 @@ class DetailFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        mBinding = FragmentDetailBinding.inflate(layoutInflater, container, false)
+        mBinding = FragmentDetailBinding.inflate(
+            layoutInflater, container, false
+        )
         return mBinding.root
     }
 
@@ -40,7 +42,6 @@ class DetailFragment : Fragment() {
         observeViewModel()
 
         mViewModel.getArtistById(args.idPhotographer)
-
     }
 
     private fun setupListeners() {
@@ -68,7 +69,8 @@ class DetailFragment : Fragment() {
 
     private fun setupData(artist: ArtistModel) {
         with(mBinding) {
-            tvNameArtist.text = "${artist.firstName} ${artist.lastName}"
+            tvNameArtist.text =
+                getString(R.string.artistFullName, artist.firstName, artist.lastName)
             tvArtistDescription.text = artist.description
             Glide.with(requireContext())
                 .load(artist.image)

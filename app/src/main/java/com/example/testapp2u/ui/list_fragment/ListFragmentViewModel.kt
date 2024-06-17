@@ -48,7 +48,9 @@ class ListFragmentViewModel @Inject constructor(
                 }
             } while (!isFinished)
 
-            _uiState.emit(ListFragmentUiState.Success(getArtistsListFromDBUseCase().toMutableList()))
+            _uiState.emit(
+                ListFragmentUiState.Success(getArtistsListFromDBUseCase().toMutableList())
+            )
         }
     }
 

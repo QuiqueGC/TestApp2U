@@ -9,4 +9,5 @@
     <string name="program">Program</string>
     <string name="artwork">Artwork</string>
     <string name="map">Map</string>
+    <string name="artistFullName">%1$s %2$s</string>
 </resources>

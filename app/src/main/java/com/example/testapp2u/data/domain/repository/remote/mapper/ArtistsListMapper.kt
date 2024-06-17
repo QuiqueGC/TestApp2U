@@ -10,9 +10,14 @@ class ArtistsListMapper : ResponseMapper<ArtistListResponse, List<ArtistEntity>>
         return getListOfArtistModel(response.results)
     }
 
-    private fun getListOfArtistModel(artistsFromResponse: List<ArtistResponse>): List<ArtistEntity> {
+    private fun getListOfArtistModel(
+        artistsFromResponse: List<ArtistResponse>
+    ): List<ArtistEntity> {
+
         val artists = mutableListOf<ArtistEntity>()
-        artistsFromResponse.forEach { artists.add(ArtistMapperFromResponse().fromResponse(it)) }
+        artistsFromResponse.forEach {
+            artists.add(ArtistMapperFromResponse().fromResponse(it))
+        }
         return artists.toList()
     }
 }

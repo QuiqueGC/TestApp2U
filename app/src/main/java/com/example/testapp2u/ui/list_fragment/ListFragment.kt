@@ -20,11 +20,14 @@ class ListFragment : Fragment(), ArtistsAdapter.ItemArtistListener {
     private lateinit var mBinding: FragmentListBinding
     private lateinit var mAdapter: ArtistsAdapter
     private val mViewModel: ListFragmentViewModel by viewModels()
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        mBinding = FragmentListBinding.inflate(layoutInflater, container, false)
+        mBinding = FragmentListBinding.inflate(
+            layoutInflater, container, false
+        )
         return mBinding.root
     }
 

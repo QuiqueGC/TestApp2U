@@ -15,12 +15,18 @@ class DetailFragmentViewModel @Inject constructor(
     private val getArtistByIdFromDB: GetArtistByIdFromDB
 ) : ViewModel() {
 
-    private val _uiState = MutableStateFlow<DetailFragmentUiState>(DetailFragmentUiState.Loading)
+    private val _uiState =
+        MutableStateFlow<DetailFragmentUiState>(
+            DetailFragmentUiState.Loading
+        )
     val uiState: StateFlow<DetailFragmentUiState> = _uiState
+
 
     fun getArtistById(idArtist: Int) {
         viewModelScope.launch(Dispatchers.IO) {
-            _uiState.emit(DetailFragmentUiState.Success(getArtistByIdFromDB(idArtist)))
+            _uiState.emit(
+                DetailFragmentUiState.Success(getArtistByIdFromDB(idArtist))
+            )
         }
     }
 }

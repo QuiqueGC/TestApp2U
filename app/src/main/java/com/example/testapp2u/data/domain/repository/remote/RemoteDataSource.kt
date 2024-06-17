@@ -1,6 +1,5 @@
 package com.example.testapp2u.data.domain.repository.remote
 
-import android.util.Log
 import com.example.testapp2u.data.domain.models.ErrorModel
 import com.example.testapp2u.data.domain.repository.db.entities.artist.ArtistEntity
 import com.example.testapp2u.data.domain.repository.remote.mapper.ArtistsListMapper
@@ -16,7 +15,7 @@ class RemoteDataSource @Inject constructor(private val apiCallService: ApiCallSe
         limit: Int,
         offset: Int
     ): BaseResponse<List<ArtistEntity>> {
-        Log.i("apiCall", "entró en el remoteDataSource")
+
         return when (val apiResult = apiCallService.getArtistsList(limit, offset)) {
             is BaseResponse.Success -> BaseResponse.Success(
                 ArtistsListMapper().fromResponse(
