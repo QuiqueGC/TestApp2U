@@ -1,11 +1,11 @@
 package com.example.testapp2u.data.domain.repository.remote.mapper
 
-import com.example.testapp2u.data.domain.models.artist.ArtistModel
+import com.example.testapp2u.data.domain.repository.db.entities.artist.ArtistEntity
 import com.example.testapp2u.data.domain.repository.remote.response.artist.ArtistResponse
 
-class ArtistMapper : ResponseMapper<ArtistResponse, ArtistModel> {
-    override fun fromResponse(response: ArtistResponse): ArtistModel {
-        return ArtistModel(
+class ArtistMapperFromResponse : ResponseMapper<ArtistResponse, ArtistEntity> {
+    override fun fromResponse(response: ArtistResponse): ArtistEntity {
+        return ArtistEntity(
             response.id ?: -1,
             response.guid ?: "",
             response.email ?: "",

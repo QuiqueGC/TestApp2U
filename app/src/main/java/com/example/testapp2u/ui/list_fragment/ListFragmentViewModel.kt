@@ -4,7 +4,7 @@ import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.testapp2u.data.domain.repository.remote.response.BaseResponse
-import com.example.testapp2u.data.domain.use_cases.GetArtistsListUseCase
+import com.example.testapp2u.data.domain.use_cases.GetArtistsListFromRemoteUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -14,7 +14,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class ListFragmentViewModel @Inject constructor(
-    private val getArtistsListUseCase: GetArtistsListUseCase
+    private val getArtistsListFromRemoteUseCase: GetArtistsListFromRemoteUseCase
 ) : ViewModel() {
 
     private val _uiState = MutableStateFlow<ListFragmentUiState>(ListFragmentUiState.Loading)
@@ -24,9 +24,9 @@ class ListFragmentViewModel @Inject constructor(
     fun getArtistsList() {
         viewModelScope.launch(Dispatchers.IO) {
             Log.i("apiCall", "llama al caso de uso")
-            when (val baseResponse = getArtistsListUseCase(10, 0)) {
+            when (val baseResponse = getArtistsListFromRemoteUseCase(10, 0)) {
                 is BaseResponse.Error -> _uiState.emit(ListFragmentUiState.Error(baseResponse.error))
-                is BaseResponse.Success -> _uiState.emit(ListFragmentUiState.Success(baseResponse.data.results))
+                is BaseResponse.Success -> {}
             }
             Log.i("apiCall", "terminó la llamada al caso de uso")
         }
