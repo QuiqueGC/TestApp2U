@@ -14,7 +14,7 @@ import javax.inject.Singleton
 @Singleton
 class DataProvider @Inject constructor(
     private val remoteDataSource: RemoteDataSource,
-    private val dbDataSource: DBSource
+    private val dbSource: DBSource
 ) :
     IRemoteDataSource, IDBSource {
     override suspend fun getArtistsListFromRemote(
@@ -26,6 +26,10 @@ class DataProvider @Inject constructor(
     }
 
     override suspend fun getArtistsFromDB(): List<ArtistModel> {
-        return dbDataSource.getArtistsFromDB()
+        return dbSource.getArtistsFromDB()
+    }
+
+    override suspend fun insertArtistsAtDB(artists: List<ArtistEntity>) {
+        dbSource.insertArtistsAtDB(artists)
     }
 }

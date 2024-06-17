@@ -8,6 +8,8 @@ abstract class BaseApiCallService {
     suspend fun <T : Any> apiCall(call: suspend () -> Response<T>): BaseResponse<T> {
         val response: Response<T>
 
+        //return BaseResponse.Error(ErrorModel())
+
         return try {
             response = call.invoke()
             if (response.isSuccessful) {
