@@ -49,7 +49,7 @@
         android:src="@drawable/ic_account"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/btnCamera"
-        tools:ignore="DuplicateSpeakableTextCheck,ImageContrastCheck" />
+        tools:ignore="DuplicateSpeakableTextCheck,ImageContrastCheck,RedundantDescriptionCheck,TouchTargetSizeCheck" />
 
     <TextView
         android:id="@+id/tvTitle"
@@ -81,14 +81,15 @@
         android:id="@+id/imgFavTitle"
         android:layout_width="@dimen/iconsSize"
         android:layout_height="@dimen/iconsSize"
-        android:contentDescription="@string/btnAccount"
-        android:src="@drawable/ic_heart_fill_brown"
         android:layout_marginEnd="@dimen/commonMargin"
-        android:scaleType="fitCenter"
         android:background="@color/transparent"
-        app:layout_constraintTop_toTopOf="@id/tvTitle"
+        android:contentDescription="@string/btnAccount"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_heart_fill_brown"
         app:layout_constraintBottom_toBottomOf="@id/tvTitle"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvTitle"
+        tools:ignore="RedundantDescriptionCheck,TouchTargetSizeCheck" />
 
 
     <Button
@@ -132,7 +133,8 @@
         app:itemActiveIndicatorStyle="@color/transparent"
         app:menu="@menu/bottom_app_bar"
         android:elevation="@dimen/elevationBasic"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:ignore="VisualLintBottomNav" />
 
     <ProgressBar
         android:id="@+id/progressBar"

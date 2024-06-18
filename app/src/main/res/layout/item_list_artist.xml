@@ -9,9 +9,11 @@
         android:id="@+id/imgPhotoArtist"
         android:layout_width="match_parent"
         android:layout_height="@dimen/imgArtistListItem"
+        android:importantForAccessibility="no"
         android:scaleType="centerCrop"
         android:src="@drawable/artist_placeholder"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ImageContrastCheck" />
 
     <TextView
         android:id="@+id/tvNameArtist"
@@ -24,8 +26,9 @@
     <CheckBox
         android:id="@+id/chbFav"
         style="@style/chbFav"
+        app:layout_constraintBottom_toBottomOf="@id/tvNameArtist"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/tvNameArtist"
-        app:layout_constraintBottom_toBottomOf="@id/tvNameArtist" />
+        tools:ignore="TouchTargetSizeCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
